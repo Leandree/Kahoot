@@ -11,14 +11,14 @@
 int main()
 {
     int fd;
-    char * myfifo = "/tmp/kahoot/azer";
-    char first[30];
+    char * myfifo = "/tmp/kahoot/azer2";
+    char *first;
+
 
     mkfifo(myfifo, 0666);
 
     fd = open(myfifo, O_WRONLY);
     scanf("%s",first);
-    printf("%s",first);
     write(fd, first, sizeof(first));
     close(fd);
 
