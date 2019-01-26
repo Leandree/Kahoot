@@ -6,23 +6,18 @@
 #include <unistd.h>
 #include <string.h>
 #include "utils.c"
-#include <sys/wait.h>
-#include <pthread.h>
 
-int main(){
-    // strcpy(&fichiersExistants[nbrFichiersExistants++],"s");
-    // printf("%i\n",checkInTable(fichiersExistants,"..s"));
+int main (int argc, char **argv){
 
-    int pid, j;
-    pthread_t th;
-    void * ret;
-    pid = pthread_create(&th,NULL,listFichiers,0);
-    pthread_join(th,&ret);
+    int nbrJoueurs;
+    printf("Nombre de joueurs : ");
+    scanf("%d",&nbrJoueurs);
+    while(nbrFichiersExistants < nbrJoueurs)
+    {
+        listerJoueurs();
+    }
 
-    // listFichiers();
-
-    // for(int i=0; i<nbrFichiersExistants;i++){
-    //     printf("%s\n",&fichiersExistants[i]);
-    // }
     
+    
+    return 0;
 }
